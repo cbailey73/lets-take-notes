@@ -1,1 +1,3 @@
-# Note Taker Starter Code
+# Note Taking Server
+
+## Description
