@@ -20,7 +20,7 @@ app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'));
   });
 
-// GET request for notes
+// GET request for existing notes
 app.get('/api/notes', (req, res) => {
   const notes = getNotes();
   res.json(notes);
@@ -28,28 +28,21 @@ app.get('/api/notes', (req, res) => {
 
 // POST request to add a note
 app.post('/api/notes', (req, res) => {
-  // Log that a POST request was received
   console.info(`${req.method} request received to add a note`);
 
-  // Destructuring assignment for the items in req.body
   const {title, text} = req.body;
 
-  // If all the required properties are present
   if (title && text) {
-    // Create a new note object
     const newNote = {
       title,
       text,
       id: uuid(),
     };
 
-    // Get the existing notes
     const notes = getNotes();
 
-    // Add the new note to the list
     notes.push(newNote);
 
-    // Save the updated notes
     saveNotes(notes);
 
     const response = {
@@ -64,6 +57,36 @@ app.post('/api/notes', (req, res) => {
   }
 });
 
+// DELETE request to delete a note by ID
+app.delete('/api/notes/:id', (req, res) => {
+  console.info(`${req.method} request received to delete a note`);
+
+  const noteId = req.params.id;
+  const notes = getNotes();
+  const noteIndex = notes.findIndex((note) => note.id === noteId);
+
+  if (noteIndex !== -1) {
+    notes.splice(noteIndex, 1);
+
+    saveNotes(notes);
+
+    const response = {
+      status: 'success',
+      message: 'Note deleted successfully',
+    };
+
+    console.log(response);
+    res.status(200).json(response);
+  } else {
+    const response = {
+      status: 'error',
+      message: 'Note not found',
+    };
+
+    console.log(response);
+    res.status(404).json(response);
+  }
+});
 
 // Helper function to read the existing notes from the file
 const getNotes = () => {
@@ -82,9 +105,7 @@ const saveNotes = (notes) => {
   );
 };
 
+// LISTEN request to start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-
-// const notesRouter = require('./routes/notes');
-// app.use('/api/notes', notesRouter);
