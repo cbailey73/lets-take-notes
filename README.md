@@ -6,6 +6,8 @@ This project was developed for the purpose of providing users an easy way to wri
 Once they submit their note, its contents are routed to an internal database via a POST request to a server. The website, by continuously running GET requests to the server, then accesses and displays all notes saved to the server to the left of the input form. Users are also able to delete the notes they have previously saved, if they wish to clear up notes they feel they no longer need.
 
 ## Usage
+NOTE: The note taking application will not function properly unless the server is running. If you are having trouble saving, retrieving, or deleting notes, please refer to the following section.
+
 On the main webpage, click the button labeled "Get Started". This will take you to the note taking application. 
 
 ![Landing Page](./site_images/note1.png)
@@ -21,7 +23,6 @@ The title of your new note will appear in the list of saved notes.
 If you wish to delete any notes, click on the red trash icon located to the right of the note's title.
 
 ![How to Delete Note](./site_images/note6.png)
-NOTE: The note taking application will not function properly unless the server is running. If you are having trouble saving, retrieving, or deleting notes, please refer to the following section.
 
 ## Troubleshooting
 If the webpage is not able to save and display notes, it is likely that the server is not running. To start the server, clone this project's code, then navigate to the terminal of "server.js". Type "npm start" into the terminal to run the server. If successful, the terminal will display a link to the webpage. 
