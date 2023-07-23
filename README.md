@@ -9,7 +9,7 @@ Once they submit their note, its contents are routed to an internal database via
 On the main webpage, click the button labeled "Get Started". This will take you to the note taking application. 
 
 ![Landing Page](./site_images/note1.png)
-There, you will see the titles of previously saved notes arranged in a list on the left side of the page. Click on a title to view its note's text content. To write a new note, type the title you wish to give it into the text entry box labeled "Note Title." Then, enter the contents of your note into the box labeled "Note Text".
+There, you will see the titles of previously saved notes arranged in a list on the left side of the page. Click on a title to view its note's text content. To write a new note, click the plus sign icon at the top left of the page. Then, type the title you wish to give it into the text entry box labeled "Note Title." Then, enter the contents of your note into the box labeled "Note Text".
 
 ![Note Entry Form](./site_images/note2.png)
 Once you have finished writing your note, click on the save icon found on the top right of your page.
@@ -30,4 +30,4 @@ The GET and POST server requests were written by following this tutorial: https:
 The DELETE server request was written by following this tutorial: https://www.tabnine.com/code/javascript/functions/express/Express/delete
 
 ## Webpage
-Access the webpage here: https://lets-take-notes-02a55b7f0edb.herokuapp.com/
+Access the webpage here: https://lets-take-notes-02a55b7f0edb.herokuapp.com
