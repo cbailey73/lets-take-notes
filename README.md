@@ -25,7 +25,7 @@ If you wish to delete any notes, click on the red trash icon located to the righ
 ![How to Delete Note](./site_images/note6.png)
 
 ## Troubleshooting
-If the webpage is not able to save and display notes, it is likely that the server is not running. To start the server, clone this project's code, then navigate to the terminal of "server.js". Type "npm start" into the terminal to run the server. If successful, the terminal will display a link to the webpage. 
+If the webpage is not able to save and display notes, it is likely that the server is not running. To start the server, clone this project's code, then navigate to the terminal of "server.js". Type "node server.js" into the terminal to run the server. If successful, the terminal will display a link to the webpage. 
 
 If the server still won't run, or if it is running and then webpage is still not functioning correctly, there is most likely a bug in the code. Feel free to shoot me an email [here](mailto:c73bailey@gmail.com) and I will do my best to fix it.
 
